@@ -31,6 +31,18 @@ h1 {
   overflow-wrap: anywhere;
 }
 
+.message.user {
+  align-self: flex-end;
+  background-color: #303030;
+  color: white;
+}
+
+.message.assistant {
+  align-self: flex-start;
+  background-color: #444444;
+  color: white;
+}
+
 .chat-box {
   display: flex;
   align-items: center;
@@ -244,5 +256,37 @@ h1 {
   &::after {
     right: 0;
     border-right-color: var(--border);
+  }
+}
+.loading {
+  display: flex;
+  gap: 5px;
+}
+
+.loading span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: white;
+  animation: bounce 1s infinite alternate;
+}
+
+.loading span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  from {
+    opacity: 0.35;
+    transform: translateY(2px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(-2px);
   }
 }

@@ -5,4 +5,9 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [react()],
   base: '/ai-chat-ui/',
+  server: {
+	  proxy: {
+		  "/api": "http://127.0.0.1:5001",
+	  },
+  },
 })
